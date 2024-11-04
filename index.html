@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor Rich-Text</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-container">
+        <div class="toolbar">
+            <img src="logo.png" alt="Logo" class="logo">
+            
+            <!--! Botões de Ferramentas -->
+            <button onclick="toggleFormat('bold')" class="tool-btn" id="boldBtn">B</button>
+            <button onclick="toggleFormat('italic')" class="tool-btn" id="italicBtn"><i>I</i></button>
+            <button onclick="toggleFormat('underline')" class="tool-btn" id="underlineBtn"><u>U</u></button>
+            <button onclick="toggleFormat('strikeThrough')" class="tool-btn" id="strikeBtn"><s>S</s></button>
+            <select onchange="setFontStyle(this.value)" class="tool-select">
+                <option value="">Fonte</option>
+                <option value="Arial">Arial</option>
+                <option value="Courier New">Courier New</option>
+                
+            </select>
+            <input type="number" onchange="setFontSize(this.value)" class="tool-input" placeholder="Tamanho">
+            <input type="color" onchange="setFontColor(this.value)" class="tool-input" title="Cor da Fonte">
+            <input type="color" onchange="setBackgroundColor(this.value)" class="tool-input" title="Cor do Fundo">
+            <button onclick="toggleFormat('insertOrderedList')" class="tool-btn" id="orderedListBtn">1.</button>
+            <button onclick="toggleFormat('insertUnorderedList')" class="tool-btn" id="unorderedListBtn">•</button>
+            <button onclick="toggleFormat('createLink')" class="tool-btn" id="linkBtn">🔗</button>
+            <button onclick="zoomIn()" class="tool-btn" id="zoomInBtn">+</button>
+            <button onclick="zoomOut()" class="tool-btn" id="zoomOutBtn">-</button>
+            <button onclick="toggleHTML()" class="tool-btn" id="htmlBtn">HTML</button>
+        </div>
+
+        <!--TODO Área de Edição -->
+        <div class="editor" contenteditable="true" id="editor">
+            Digite aqui seu texto...
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
